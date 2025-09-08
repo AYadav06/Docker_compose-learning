@@ -4,13 +4,15 @@ WORKDIR /app
 
 COPY  package* .
 
-RUN  npm install
+RUN   npm install
 
 COPY  . .
 
 ENV DATABASE_URL=postgres://postgres:mysecretpassword@localhost:5432/postgres
-RUN   npx prisma migrate
+RUN   npx prisma migrate dev
 RUN   npx prisma generate 
 RUN   npm run build 
+
+EXPOSE 3000
 
 CMD [ "npm","start" ]

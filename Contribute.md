@@ -24,3 +24,4 @@
 ##  Docker Compose Installation steps
 - Install docker, docker-compose
 - Run `docker compose up`
+- Run `docker compose stop ` to stop docker containers
